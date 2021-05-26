@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: checkit
+spec:
+  rules:
+  - host: checkit.testk8s.com
+    http: 
+      paths:
+      - path: /
+        backend:
+          serviceName: checkit
+          servicePort: 80

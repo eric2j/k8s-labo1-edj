@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: checkitvh
+spec:
+  rules:
+  - host: checkitvh1.testk8s.com
+    http: 
+      paths:
+      - path: /
+        backend:
+          serviceName: checkit
+          servicePort: 80
+  - host: checkitvh2.testk8s.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: checkit2
+          servicePort: 80

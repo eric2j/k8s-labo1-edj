@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: checkitmp
+spec:
+  rules:
+  - host: checkitmp.testk8s.com
+    http:
+      paths:
+      - path: /version1/* 
+        backend:
+          serviceName: checkit
+          servicePort: 80 
+      - path: /version2/*
+        backend:
+          serviceName: checkit2
+          servicePort: 80
